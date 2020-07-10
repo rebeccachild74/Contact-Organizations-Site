@@ -1,9 +1,11 @@
 <div id="myDropdown" class="dropdown-content">
-    {{#each this.options as |option|}}
-        <DropDownOption
-            @href={{option.href}}
-        >
-            {{{option.content}}}
-        </DropDownOption>
+    {{yield}}
+    {{#each @options as |choice|}}
+    <DropDownOption>
+        {{choice}}
+    </DropDownOption>
     {{/each}}
+    <DropDownOption @href="#home">Home</DropDownOption>
+    <DropDownOption @href="#about">About</DropDownOption>
+    <DropDownOption @href="#home">Contact</DropDownOption>
   </div>
