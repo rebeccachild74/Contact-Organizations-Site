@@ -1,0 +1,9 @@
+<div id="myDropdown" class="dropdown-content">
+    {{#each this.options as |option|}}
+        <DropDownOption
+            @href={{option.href}}
+        >
+            {{{option.content}}}
+        </DropDownOption>
+    {{/each}}
+  </div>
