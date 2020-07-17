@@ -1,6 +1,6 @@
-<DropDown @title="Test" @choices={{@model}}/>
-{{#each @model as |post|}}
-    <div>
-        {{post.title}}
-    </div>
-{{/each}}
+<DropDown as |dd|>
+    <dd.button @value="Temp"></dd.button>
+    <dd.option @value="Dr"></dd.option>
+    <dd.option @value="Professor"></dd.option>
+</DropDown>
+{{outlet}}

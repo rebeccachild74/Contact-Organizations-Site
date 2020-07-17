@@ -1,5 +1,12 @@
-<div class="dropdown" ...attributes>
-  <button class="dropbtn">{{@title}}</button>
-  <DropDownOptions @options={{@choices}}>
-  </DropDownOptions>
-</div>
+<select onchange={{action "setSelection" value="target.value"}}>
+  {{yield (hash
+      button=(component 'drop-down-button')
+    )}}
+ <option disabled selected>Title</option>
+    <DropDownOption @value="Mrs"></DropDownOption>
+    <DropDownOption @value="Mr"></DropDownOption>
+    {{yield (hash
+      option=(component 'drop-down-option')
+    )}}
+</select>
+<button {{action 'submit'}}>Submit</button>

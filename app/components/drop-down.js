@@ -1,8 +1,14 @@
-import Component from '@ember/component';
-import Ember from 'ember';
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
+import { A } from '@ember/array';
 
-export default Component.extend({
-    click() {
-        document.getElementById("myDropdown").classList.toggle("show")
+export default class NewMessageInputComponent extends Component{
+    selectedOption;
+
+    @action
+    setSelection(event) {
+        this.set('selectedOption', selected);
+        console.log(this.get('selectedOption'));
     }
-})
+}
