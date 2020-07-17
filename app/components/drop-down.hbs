@@ -1,12 +1,8 @@
-<select onchange={{action "setSelection" value="target.value"}}>
-  {{yield (hash
-      button=(component 'drop-down-button')
-    )}}
- <option disabled selected>Title</option>
-    <DropDownOption @value="Mrs"></DropDownOption>
-    <DropDownOption @value="Mr"></DropDownOption>
-    {{yield (hash
-      option=(component 'drop-down-option')
-    )}}
-</select>
-<button {{action 'submit'}}>Submit</button>
+<div class="drop-down">
+  <select class="button" onchange={{action "setSelection" value="target.value"}}>
+  <option class="default" disabled selected>{{@default}}</option>
+      {{yield (hash
+        option=(component 'drop-down-option')
+      )}}
+  </select>
+</div>

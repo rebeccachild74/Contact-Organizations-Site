@@ -1,6 +1,8 @@
-<DropDown as |dd|>
-    <dd.button @value="Temp"></dd.button>
-    <dd.option @value="Dr"></dd.option>
-    <dd.option @value="Professor"></dd.option>
-</DropDown>
+<NavBar></NavBar>
+<div class="content-container">
+    <DropDown @default="Title" as |dd|>
+        <dd.option @value="Dr"></dd.option>
+        <dd.option @value="Professor"></dd.option>
+    </DropDown>
+</div>
 {{outlet}}
