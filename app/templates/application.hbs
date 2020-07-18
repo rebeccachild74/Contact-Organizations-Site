@@ -1,7 +1,11 @@
 <NavBar></NavBar>
 <div class="content-container">
+    <h1>Recipient Information</h1>
     <DropDown @default="Title" as |dd|>
-        <dd.option @value="Dr"></dd.option>
+        <dd.option @value="Mrs"></dd.option>
+        <dd.option @value="Ms"></dd.option>
+        <dd.option @value="Mr"></dd.option>
+        <dd.option @value="Doctor"></dd.option>
         <dd.option @value="Professor"></dd.option>
     </DropDown>
 </div>

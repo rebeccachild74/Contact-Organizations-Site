@@ -1,8 +1,11 @@
 <div class="drop-down">
-  <select class="button" onchange={{action "setSelection" value="target.value"}}>
-  <option class="default" disabled selected>{{@default}}</option>
-      {{yield (hash
-        option=(component 'drop-down-option')
+  <button class="dd-button" onclick={{action "open"}}>
+    <h2>{{selection}}</h2>
+  </button>
+  <div class="dd-options" onclick={{action "setSelection"}}>
+    <a class="dd-default" disabled selected>{{@default}}</a>
+    {{yield (hash
+        option=(component 'drop-down-option' action 'setSelection' selected)
       )}}
-  </select>
+  </div>
 </div>

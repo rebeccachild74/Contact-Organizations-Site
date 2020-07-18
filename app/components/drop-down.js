@@ -1,14 +1,26 @@
-import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
+import Component from '@ember/component';
 import { action } from '@ember/object';
 import { A } from '@ember/array';
 
-export default class NewMessageInputComponent extends Component{
-    selectedOption;
+export default Ember.Component.extend({
+    classNameBindings: ['opened'],
+    selection: '',
+    
+    init(){
+      this._super(...arguments);
+      this.set('selection', this.get('default'));
+    },
 
-    @action
-    setSelection(event) {
-        this.set('selectedOption', selected);
-        console.log(this.get('selectedOption'));
+    actions:{
+      open(){
+        this.toggleProperty('opened')
+        //console.log(this.selection);
+      },
+      setSelection(choice){
+        this.toggleProperty('opened')
+        console.log(choice.srcElement.firstChild.nodeValue);
+        //console.log(this.get('childViews'))
+        this.set('selection', choice.srcElement.firstChild.nodeValue);
+      }
     }
-}
+  });
