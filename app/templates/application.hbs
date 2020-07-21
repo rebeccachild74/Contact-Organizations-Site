@@ -1,6 +1,7 @@
 <NavBar></NavBar>
 <div class="content-container">
     <h1>Recipient Information</h1>
+    <p>Who is your email directed towards? Include their information here.</p>
     <DropDown @default="Title" as |dd|>
         <dd.option @value="Mrs"></dd.option>
         <dd.option @value="Ms"></dd.option>
@@ -8,5 +9,10 @@
         <dd.option @value="Doctor"></dd.option>
         <dd.option @value="Professor"></dd.option>
     </DropDown>
+    <Input id="site" type="text" class="text-input grid-area: row12;" @value="Name"/>
+    <Input id="site" type="text" class="text-input grid-area: row21;" @value="Email"/>
+</div>
+<div class="content-container">
+    <h1>Sender Information</h1>
 </div>
 {{outlet}}
